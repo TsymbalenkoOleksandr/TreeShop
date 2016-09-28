@@ -1,0 +1,41 @@
+@mixin bg_size($size) {
+	background-size: $size;
+	-webkit-background-size: $size;
+	-o-background-size: $size;
+	-moz-background-size: $size;
+}
+
+@mixin box_shadow($param) {
+	box-shadow: $param;
+	-webkit-box-shadow: $param;
+	-moz-box-shadow: $param;
+}
+
+@mixin disp {
+	display: inline-block;
+	*display: inline;
+}
+
+@mixin col($param) {
+	min-height: 120px;
+	max-height: 121px;
+	-webkit-column-width: auto;
+	-moz-column-width: auto;
+	column-width: auto;
+	-webkit-column-count: $param;
+	-moz-column-count: $param;
+	column-count: $param;
+	-webkit-column-gap: 40px;
+	-moz-column-gap: 40px;
+	column-gap: 40px;
+}
+
+@mixin fonts_heavy($size) {
+	font-family: 'LatoWebHeavy';
+	font-size: $size;
+}
+
+@mixin fonts_regular($size) {
+	font-family: 'LatoWeb';
+	font-size: $size;
+}
