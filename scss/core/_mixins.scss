@@ -16,20 +16,6 @@
 	*display: inline;
 }
 
-@mixin col($param) {
-	min-height: 120px;
-	max-height: 121px;
-	-webkit-column-width: auto;
-	-moz-column-width: auto;
-	column-width: auto;
-	-webkit-column-count: $param;
-	-moz-column-count: $param;
-	column-count: $param;
-	-webkit-column-gap: 40px;
-	-moz-column-gap: 40px;
-	column-gap: 40px;
-}
-
 @mixin fonts_heavy($size) {
 	font-family: 'LatoWebHeavy';
 	font-size: $size;
@@ -38,4 +24,17 @@
 @mixin fonts_regular($size) {
 	font-family: 'LatoWeb';
 	font-size: $size;
+}
+
+@mixin fonts_bold($size) {
+	font-family: 'LatoWebBold' !important;
+	font-size: $size !important;
+}
+
+@mixin main_forms {
+	box-sizing: border-box;
+	border: 1px solid #e5e5e5;
+	width: 1032px;
+	background: #fefefe;
+	text-align: center;
 }

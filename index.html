@@ -5,6 +5,10 @@
   <title>shop</title>
   <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="libs/jquery/jquery-3.1.1.min.js"></script>
+  <link type="text/css" href="libs/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="libs/jquery-ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
   <!--[if lt IE 9]>
   <script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -73,9 +77,9 @@
             <span>Арт. 2514/302</span>
           </div>
           <div class="basket-item-spinner">
-            fdsad
+            <input class="spinner" name="value" readonly="readonly" />
           </div>
-          <div class="busket-item-sum">
+          <div class="basket-item-sum">
             <span>9995</span>
           </div>
           <div class="basket-item-cansel">
@@ -91,9 +95,9 @@
             <span>Арт. 8246/044</span>
           </div>
           <div class="basket-item-spinner">
-            fdsad
+            <input class="spinner" name="value" readonly="readonly" />
           </div>
-          <div class="busket-item-sum">
+          <div class="basket-item-sum">
             <span>9995</span>
           </div>
           <div class="basket-item-cansel">
@@ -109,103 +113,107 @@
             <span>Арт. 2514/302</span>
           </div>
           <div class="basket-item-spinner">
-            fdsad
+            <input class="spinner" name="value" readonly="readonly" />
           </div>
-          <div class="busket-item-sum">
+          <div class="basket-item-sum">
             <span>9995</span>
           </div>
           <div class="basket-item-cansel">
             <a href="#">&#215</a>
           </div>
         </div>
-        <div class="basket-footer">
-          <div></div>
-          <div></div>
-          <div>Итого: </div>
-          <div>28000</div>
-          <div> </div>
-        </div>
+      </div>
+      <div class="basket-footer">
+        <div>Итого: </div>
+        <div>28000</div>
       </div>
       <div class="main-payment">
         <div class="payment-header">
           <h2>АДРЕС ДОСТАВКИ</h2>
-          <span><i>Все поля обязательны для заполнения</i></span>
+          <span>Все поля обязательны для заполнения</span>
         </div>
         <div class="payment-tabs">
-          <div class="payment-tabs-item">
-            ВЫБЕРИТЕ СПОСОБ ДОСТАВКИ
-            <select>
+          <fieldset>
+          <div class="payment-tabs-item first-item">
+            <div>ВЫБЕРИТЕ СПОСОБ ДОСТАВКИ</div>
+            <select name="delivery" id="delivery">
               <option value="Курьер" selected = "selected">Доставка курьером</option>
               <option value="Самовывоз">Самовывоз</option>
             </select>
           </div>
           <div class="payment-tabs-item">
             <div class="input">
-              ФАМИЛИЯ
-              <input type="text" />
+              <div>ФАМИЛИЯ</div>
+              <input type="text" name="surname" />
             </div>
             <div class="input">
-              ИМЯ
-              <input type="text" />
+              <div>ИМЯ</div>
+              <input type="text" name="name" />
             </div>
           </div>
           <div class="payment-tabs-item">
-            АДРЕС
-            <input type="text" />
+              <div>АДРЕС</div>
+              <input type="text" name="adress" />
           </div>
           <div class="payment-tabs-item">
             <div class="input">
-              ГОРОД
-              <input type="text" />
+              <div>ГОРОД</div>
+              <input type="text" name="city" />
             </div>
             <div class="input">
-              ИНДЕКС
-              <input type="text" />
+              <div>ИНДЕКС</div>
+              <input type="text" name="index" />
             </div>
           </div>
           <div class="payment-tabs-item">
             <div class="input">
-              НОМЕР ТЕЛЕФОНА
-              <input type="text" />
+              <div>НОМЕР ТЕЛЕФОНА</div>
+              <input type="text" name="telephone" />
             </div>
             <div class="input">
-              E-MAIL
-              <input type="email" />
+              <div>E-MAIL</div>
+              <input type="text" name="telephone" />
             </div>
           </div>
+          </fieldset>
         </div>
       </div>
       <div class="main-methods">
-        <h2>МЕТОДЫ ОПЛАТЫ</h2>
-        <span><i>Все поля обязательны для заполнения</i></span>
-        <div class="total">
-          <div class="total-left">
-            <div>Сумма:</div>
-            <div>Доставка:</div>
-            <div>Итого:</div>
-          </div>
-          <div class="total-right">
-            <div>9000 руб.</div>
-            <div>300 руб.</div>
-            <div>9300 руб.</div>
-          </div>
+        <div class="main-methods-header">
+          <h2>МЕТОДЫ ОПЛАТЫ</h2>
+          <span><i>Все поля обязательны для заполнения</i></span>
         </div>
+        <table class="total">
+        <tbody>
+          <tr>
+            <td class="total-left">Сумма:</td>
+            <td class="total-right">9000 руб.</td>
+          </tr>
+          <tr>
+            <td class="total-left">Доставка:</td>
+            <td class="total-right">300 руб.</td>
+          </tr>
+            <td class="total-left">Итого:</td>
+            <td class="total-right highlight">9300 руб.</td>
+          </tr>
+          </tbody>
+        </table>
         <div class="payment-tabs">
-          <div class="payment-tabs-item">
-            ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ
+          <div class="payment-tabs-nav">
+            <div>ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</div>
             <div class="switch">
               <div class="active"><a href="#">ДЛЯ ФИЗИЧЕСКИХ ЛИЦ</a></div>
               <div><a href="#">ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ</a></div>
             </div>
           </div>
-          <div class="payment-tabs-item">
-            <select>
+          <div class="payment-tabs-nav">
+            <select name="payment" id="payment">
               <option value="Курьер" selected = "selected">Кредитная карта</option>
               <option value="Самовывоз">Банковский перевод</option>
               <option value="Самовывоз">Наличные</option>
             </select>
           </div>
-          <div class="payment-tabs-item">
+          <div class="payment-tabs-nav">
             <div class="button-group">
               <button class="button button-left">ОФОРМИТЬ ЗАКАЗ</button>
               <button class="button button-right">ПРОДОЛЖИТЬ ПОКУПКУ</button>
@@ -214,36 +222,44 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div class="footer">
-        <div class="footer-catalog">
-          <h3>каталог</h3>
+    <footer class="footer">
+      <div class="footer-box">
+        <div class="footer-box-catalog">
+          <div class="footer-box-header">КАТАЛОГ</div>
           <div class="footer-catalog-column">
-            <a href="#">Елочные шары с ручной росписью (725)</a> <br />
-            <a href="#">Корпоративные сувениры (135) </a><br />
-            <a href="#">Формовые игрушки (214)</a> <br />
-            <a href="#">Открытки от Деда Мороза (76)</a> <br />
-            <a href="#">Искусственные ёлки (225)</a> <br />
-            <a href="#">Символ года (35)</a> <br />
-            <a href="#">Украшения из Европы (214)</a> <br />
-            <a href="#">Новогодние свечи (76)</a> <br />
-            <a href="#">Рождественские подарки (36)</a> <br />
-            <a href="#">Наши идеи (9)</a> <br />
+            <ul>
+              <li><a href="#">Елочные шары с ручной росписью (725)</a> </li> 
+              <li><a href="#">Корпоративные сувениры (135) </a></li>
+              <li><a href="#">Формовые игрушки (214)</a> </li>
+              <li><a href="#">Открытки от Деда Мороза (76)</a> </li>
+              <li><a href="#">Искусственные ёлки (225)</a> </li>
+            </ul>
+          </div>
+          <div class="footer-catalog-column">
+            <ul>
+              <li><a href="#">Символ года (35)</a> </li>
+              <li><a href="#">Украшения из Европы (214)</a> </li>
+              <li><a href="#">Новогодние свечи (76)</a> </li>
+              <li><a href="#">Рождественские подарки (36)</a> </li>
+              <li><a href="#">Наши идеи (9)</a> </li>
+            </ul>
           </div>
         </div>
-        <div class="footer-shop">
-          <h3>магазин</h3>
+        <div class="footer-box-shop">
+          <div class="footer-box-header">МАГАЗИН</div>
           <div class="footer-shop-column">
-            <a href="#">О нас</a><br />
-            <a href="#">Новости</a><br />
-            <a href="#">Доставка</a><br />
-            <a href="#">Оплата</a><br />
-            <a href="#">Контакты</a><br />
+            <ul>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Оплата</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
           </div>
         </div>
-        <div class="footer-social">
-          <h3>мы в соцсетях</h3>
-          <div class="footer-social-colum">
+        <div class="footer-box-social">
+          <div class="footer-box-header">МЫ В СОЦСЕТЯХ</div>
+          <div class="footer-social-column">
             2016 &#169 Все права защищены
           </div>
           <div class="footer-social-icons">
