@@ -34,45 +34,68 @@
   margin: 0;
   padding: 0; }
 
+html {
+  height: 100%; }
+
 body {
-  margin: 0; }
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-box-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column; }
 
 .wrapper {
-  margin: 0 auto; }
+  margin: 0 auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  -moz-flex: 1;
+  flex: 1; }
 
 .topline {
-  vertical-align: middle;
-  padding-left: 73px; }
+  text-align: right; }
+  .topline a {
+    text-decoration: none;
+    color: #5d7a88; }
 
-.topline-logo {
+.topline-inner {
   display: inline-block;
-  *display: inline;
-  width: 30%; }
-  .topline-logo > img {
-    position: absolute;
-    left: 149px;
-    top: 0;
-    width: 162px;
-    height: 151px; }
+  padding-right: 11.4%; }
 
-.topline-phone, .topline-email {
+.topline-inner-logo > img {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  left: 149px;
+  top: 0;
+  width: 162px;
+  height: 151px; }
+
+.topline-inner-phone, .topline-inner-email {
   display: inline-block;
   *display: inline;
   font-family: 'LatoWebHeavy';
   font-size: 19px;
-  padding: 17px 25px;
-  color: #5d7a88; }
+  padding: 19px 25px; }
+  .topline-inner-phone img, .topline-inner-email img {
+    width: 19px;
+    height: 14px; }
 
-.topline-entry, .topline-basket,
-.topline-search {
+.topline-inner-entry, .topline-inner-basket,
+.topline-inner-search {
   display: inline-block;
   *display: inline;
   font-family: 'LatoWeb';
   font-size: 13px;
-  padding: 17px 20px;
-  color: #5d7a88; }
+  padding: 17px 20px; }
 
-.topline-entry {
+.topline-inner-entry {
   margin-left: 5px; }
 
 .poster {
@@ -80,35 +103,33 @@ body {
   width: 100%;
   height: 505px;
   background-repeat: no-repeat;
-  background-size: 100%;
-  -webkit-background-size: 100%;
-  -o-background-size: 100%;
-  -moz-background-size: 100%; }
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover; }
 
-.nav ul {
-  margin: 0;
-  padding: 14px 0;
-  background: #8da1a8;
-  text-align: center; }
-.nav li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: inline-block;
-  *display: inline; }
-.nav a {
-  font-family: 'LatoWeb';
-  font-size: 17px;
-  padding: 14px 11px;
-  text-decoration: none;
-  color: #fff;
-  line-height: 100%; }
-.nav a:hover {
-  color: #e5e5e5; }
-.nav .current a {
-  background: #5d7a88; }
+.nav {
+  background: #8da1a8; }
+  .nav ul {
+    margin: 0 auto;
+    width: 922px; }
+  .nav li {
+    margin: 0;
+    padding: 12px 11px;
+    list-style: none;
+    display: inline-block;
+    *display: inline; }
+  .nav a {
+    font-family: 'LatoWeb';
+    font-size: 17px;
+    text-decoration: none;
+    color: #fff; }
+  .nav a:hover {
+    color: #e5e5e5; }
+  .nav .current {
+    background: #5d7a88; }
 
-.main-header {
+.title {
   font-family: 'LatoWebBold' !important;
   font-size: 22px !important;
   text-align: center;
@@ -120,7 +141,7 @@ body {
   display: table;
   table-layout: fixed;
   border-collapse: collapse;
-  width: 1032px;
+  width: 76.5%;
   margin: 52px auto 5px; }
   .basket > div:nth-child(odd) {
     background: #fdfdfd; }
@@ -159,15 +180,14 @@ body {
     vertical-align: middle; }
 
 .basket-item-img {
-  padding: 16px 7px 11px; }
+  padding: 16px 7px 10px; }
   .basket-item-img > img {
     width: 88px;
-    height: 87px; }
+    height: 87px;
+    border: 1px solid #e5e5e5; }
 
 .basket-item-description {
-  position: relative;
-  left: 0;
-  top: 4px; }
+  padding: 8px 2px 0; }
   .basket-item-description > div {
     font-family: 'LatoWebBold' !important;
     font-size: 13px !important;
@@ -187,7 +207,7 @@ body {
   .basket-item-sum > span {
     color: #ed184f; }
 
-.basket-item-cansel > a {
+.basket-item-cansel .cansel {
   text-decoration: none;
   font-size: 26px;
   color: #6c6c6c; }
@@ -198,7 +218,8 @@ body {
   width: 1032px;
   margin: 0 auto;
   box-sizing: border-box;
-  background: #fdfdfd; }
+  background: #fdfdfd;
+  border-top: 4px solid #fff; }
   .basket-footer > div {
     display: table-cell;
     padding: 15px 0;
@@ -214,33 +235,36 @@ body {
       padding-left: 26px;
       color: #ed184f; }
 
-.main-payment {
+.main {
+  width: 100%; }
+
+.payment {
   box-sizing: border-box;
   border: 1px solid #e5e5e5;
-  width: 1032px;
+  width: 76.6%;
   background: #fefefe;
   text-align: center;
-  margin: 43px auto 0px; }
+  margin: 43px auto; }
 
-.main-methods {
+.methods {
   box-sizing: border-box;
   border: 1px solid #e5e5e5;
-  width: 1032px;
+  width: 76.6%;
   background: #fefefe;
   text-align: center;
   height: 606px;
-  margin: 37px auto 0px; }
+  margin: 37px auto; }
 
-.main-methods-header {
+.methods-header {
   margin-top: 50px; }
-  .main-methods-header > h2 {
+  .methods-header > h2 {
     font-family: 'LatoWebBold' !important;
     font-size: 22px !important; }
-  .main-methods-header > span {
+  .methods-header > span {
     font-family: 'LatoWeb';
     font-size: 18px;
     font-style: italic;
-    line-height: 40px; }
+    line-height: 2.21em; }
 
 .payment-header {
   text-align: center;
@@ -253,7 +277,7 @@ body {
     font-family: 'LatoWeb';
     font-size: 18px;
     font-style: italic;
-    line-height: 41px;
+    line-height: 2.21em;
     word-spacing: 1px; }
 
 .payment-tabs {
@@ -267,12 +291,15 @@ body {
   text-align: left;
   line-height: 1.8em;
   color: #767c80; }
+  .payment-tabs-item input {
+    font-family: 'LatoWeb';
+    font-size: 13px;
+    color: #6e6e6e; }
   .payment-tabs-item > input {
     box-sizing: border-box;
     width: 100%;
     border: 1px solid #c2c2c2;
     padding: 6px;
-    color: #6e6e6e;
     height: 37px; }
   .payment-tabs-item > div {
     padding-bottom: 6px; }
@@ -283,11 +310,19 @@ body {
   font-family: 'LatoWeb';
   font-size: 11px;
   padding-bottom: 10px;
-  text-align: left;
   line-height: 1.8em;
   color: #767c80; }
   .payment-tabs-nav > div {
     padding-bottom: 15px; }
+  .payment-tabs-nav input {
+    box-sizing: border-box;
+    border: 1px solid #c2c2c2;
+    width: 100%;
+    height: 37px;
+    padding: 6px;
+    font-family: 'LatoWeb';
+    font-size: 13px;
+    color: #6e6e6e; }
 
 .first-item {
   margin-top: 18px; }
@@ -358,7 +393,8 @@ body {
   border-radius: 0px;
   cursor: pointer;
   padding: 15px;
-  color: #fff; }
+  color: #fff;
+  margin-right: 8px; }
   .button:focus {
     outline: none; }
 
@@ -367,83 +403,71 @@ body {
   padding-left: 23px;
   text-align: center; }
 
-.button-left {
+.button-red {
   width: 169px;
   background: #ed184f;
-  margin-right: 8px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75); }
+  .button-red:hover {
+    background: #f15980; }
+  .button-red:active {
+    background: #ed184f; }
 
-.button-right {
+.button-blue {
   width: 196px;
   background: #5d7a88;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75); }
+  .button-blue:hover {
+    background: #8c8c8c; }
+  .button-blue:active {
+    background: #5d7a88; }
 
 .footer {
   background: url(../img/footer.png);
+  background-size: cover;
   background-repeat: no-repeat;
-  margin-top: 48px;
-  width: 100%;
-  height: 100%;
-  text-align: center; }
-
-.footer-box-catalog {
-  display: inline-block;
-  *display: inline;
-  vertical-align: top;
-  margin: 33px 71px 45px 32px;
-  line-height: 1.5em; }
-  .footer-box-catalog > h3 {
+  margin-top: 10px; }
+  .footer h3 {
     font-size: 1.5em; }
 
-.footer-box-shop {
+.footer-block-column {
   vertical-align: top;
   display: inline-block;
   *display: inline;
-  margin: 32px 63px 3px 21px;
-  line-height: 1.6em; }
-
-.footer-catalog-column {
-  padding-right: 56px; }
-
-.footer-shop-column, .footer-catalog-column, .footer-social-column {
-  display: inline-block;
-  *display: inline;
-  background-size: 100%;
-  -webkit-background-size: 100%;
-  -o-background-size: 100%;
-  -moz-background-size: 100%; }
-  .footer-shop-column a, .footer-catalog-column a, .footer-social-column a {
-    color: #303030;
-    line-height: 18px; }
-  .footer-shop-column li, .footer-catalog-column li, .footer-social-column li {
-    list-style: none; }
-
-.footer-box-social {
-  display: inline-block;
-  *display: inline;
-  min-height: 120px;
-  margin: 32px 88px;
+  line-height: 1.6em;
+  padding-right: 5.5%;
   line-height: 1.5em;
-  vertical-align: top; }
-  .footer-box-social > h3 {
-    font-size: 1.5em; }
-
-.footer-box {
-  text-align: left;
-  display: inline-block;
-  *display: inline;
-  min-width: 81%;
+  color: #5d7a88;
   font-family: 'LatoWeb';
   font-size: 11px; }
+  .footer-block-column li {
+    font-family: 'LatoWeb';
+    font-size: 11px;
+    list-style: none;
+    line-height: 1.9em; }
+  .footer-block-column a {
+    color: #5d7a88;
+    text-decoration: none; }
+    .footer-block-column a:hover {
+      border-bottom: 1px solid #969e9d; }
 
-.footer-social-icons {
-  padding-top: 30px; }
-  .footer-social-icons > span {
-    color: #9cb3b9; }
+.footer-block {
+  text-align: left;
+  max-width: 76.5%;
+  margin: 0px auto;
+  padding: 34px 0; }
+  .footer-block > div:nth-last-child(2) {
+    padding-left: 1%;
+    padding-left: 9%;
+    padding-right: 14.7%;
+    border-left: 1px solid #c5d6d6; }
+  .footer-block > div:nth-child(2) {
+    vertical-align: bottom; }
+  .footer-block .footer-block-header {
+    color: #303030; }
 
 fieldset {
   border: 0; }
@@ -452,17 +476,21 @@ fieldset {
   border-radius: 0;
   background: #fff;
   height: 26px;
+  color: #5d7a88;
   font-family: 'LatoWeb';
   font-size: 13px;
   display: table-cell; }
   #delivery-button .ui-selectmenu-icon.ui-icon, #payment-button .ui-selectmenu-icon.ui-icon {
     right: -9px; }
 
+#payment-button {
+  color: #5d7a88; }
+
 .ui-menu-item > div {
   font-family: 'LatoWeb';
   font-size: 13px; }
 
-.footer-box-header {
+.footer-block-header {
   font-family: 'LatoWebBold' !important;
   font-size: 14px !important;
   padding-bottom: 10px; }
