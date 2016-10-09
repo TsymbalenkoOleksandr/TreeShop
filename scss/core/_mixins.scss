@@ -17,8 +17,9 @@
 }
 
 @mixin fonts_heavy($size) {
-	font-family: 'LatoWebHeavy';
+	font-family: 'LatoWeb';
 	font-size: $size;
+	font-weight: 900;
 }
 
 @mixin fonts_regular($size) {
@@ -27,8 +28,9 @@
 }
 
 @mixin fonts_bold($size) {
-	font-family: 'LatoWebBold' !important;
+	font-family: 'LatoWeb' !important;
 	font-size: $size !important;
+	font-weight: bold;
 }
 
 @mixin main_forms {

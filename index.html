@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>shop</title>
   <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -15,45 +16,53 @@
   <![endif]-->
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <div class="topline">
-        <div class="topline-inner">
-          <div class = "topline-inner-logo">
-            <img src="img/logo.png" alt="logo" />
-          </div>
-          <div class = "topline-inner-email">
+  <header class="header">
+    <div class="topline">
+      <div class="topline-inner">
+        <div class = "topline-inner-logo">
+          <img src="img/logo.png" alt="logo" />
+        </div>
+        <div class="topline-inner-contacts">
+          <div class = "topline-inner-item">
             <a href="#"><img src="img/envelope.png" /> norakrass@mail.ru</a>
           </div>
-          <div class = "topline-inner-phone">
+          <div class = "topline-inner-item">
             <a href="#"><img src="img/phone.png" /> +7 905 406 40 46 </a>
           </div>
-          <div class="topline-inner-entry">
+        </div>
+        <div class="topline-inner-control">
+          <div class="topline-inner-item">
             <a href="#"><div class="fa fa-user"></div>Войти</a>
           </div>
-          <div class="topline-inner-basket">
+          <div class="topline-inner-item">
             <a href=""><div class="fa fa-shopping-bag"></div>Корзина (0)</a>
           </div>
-          <div class="topline-inner-search">
+          <div class="topline-inner-item">
             <div class="fa fa-search"></div>
           </div>
-          <div class="topline-inner-menu"></div>
         </div>
       </div>
-      <div class="poster">
-        <div class="poster-time"></div>
+    </div>
+    <div class="poster">
+      <div class="poster-time"></div>
+    </div>
+    <nav class="nav">
+      <div class="icon-menu">
+        <div class="divide"></div>
+        <div class="divide"></div>
+        <div class="divide"></div>
       </div>
-      <nav class="nav">
-        <ul>
-          <li class="current"><a href="#">Елочные игрушки</a></li>
-          <li><a href="#">Дизайнерские решения</a></li>
-          <li><a href="#">Корпоративные сувениры</a></li>
-          <li><a href="#">Оптовикам</a></li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Контакты</a></li>
-        </ul>
-      </nav>
-    </header>
+      <ul>
+        <li class="current"><a href="#">Елочные игрушки</a></li>
+        <li><a href="#">Дизайнерские решения</a></li>
+        <li><a href="#">Корпоративные сувениры</a></li>
+        <li><a href="#">Оптовикам</a></li>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="wrapper">
     <div class="main">
       <div class="breadcrumbs"></div>
       <div class="title">ВАША КОРЗИНА</div>
@@ -120,8 +129,10 @@
           </div>
         </div>
         <div class="basket-footer">
+          <div></div>
           <div>Итого: </div>
           <div>28000</div>
+          <div></div>
         </div>
       </div>
       <div class="payment">
@@ -199,7 +210,7 @@
             <div>ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</div>
             <div class="switch">
               <div class="active"><a href="#">ДЛЯ ФИЗИЧЕСКИХ ЛИЦ</a></div>
-              <div><a href="#">ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ</a></div>
+              <div class="entity"><a href="#">ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ</a></div>
             </div>
           </div>
           <div class="payment-tabs-nav">
@@ -209,10 +220,10 @@
               <option value="Самовывоз">Наличные</option>
             </select>
           </div>
-          <div class="payment-tabs-nav">
+          <div class="payment-tabs-nav faded">
             <input type="text" placeholder="Наименование юридического лица" name="entity" />
           </div>
-          <div class="payment-tabs-nav">
+          <div class="payment-tabs-nav faded">
             <input type="text" placeholder="ИНН" name="enn" />
           </div>
           <div class="payment-tabs-nav">
@@ -227,55 +238,55 @@
   </div>
   <footer class="footer">
     <div class="footer-block">
-      <div class="footer-block-column">
+      <div class="footer-block-col1">
+        <div class="footer-block-list">
         <div class="footer-block-header">КАТАЛОГ</div>
-        <ul>
-          <li><a href="#">Елочные шары с ручной росписью (725)</a> </li> 
-          <li><a href="#">Корпоративные сувениры (135) </a></li>
-          <li><a href="#">Формовые игрушки (214)</a> </li>
-          <li><a href="#">Открытки от Деда Мороза (76)</a> </li>
-          <li><a href="#">Искусственные ёлки (225)</a> </li>
-        </ul>
+          <ul>
+            <li><a href="#">Елочные шары с ручной росписью (725)</a> </li> 
+            <li><a href="#">Корпоративные сувениры (135) </a></li>
+            <li><a href="#">Формовые игрушки (214)</a> </li>
+            <li><a href="#">Открытки от Деда Мороза (76)</a> </li>
+            <li><a href="#">Искусственные ёлки (225)</a> </li>
+          </ul>
+        </div>
+        <div class="footer-block-list">
+          <ul>
+            <li><a href="#">Символ года (35)</a> </li>
+            <li><a href="#">Украшения из Европы (214)</a> </li>
+            <li><a href="#">Новогодние свечи (76)</a> </li>
+            <li><a href="#">Рождественские подарки (36)</a> </li>
+            <li><a href="#">Наши идеи (9)</a> </li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-block-column">
-        <ul>
-          <li><a href="#">Символ года (35)</a> </li>
-          <li><a href="#">Украшения из Европы (214)</a> </li>
-          <li><a href="#">Новогодние свечи (76)</a> </li>
-          <li><a href="#">Рождественские подарки (36)</a> </li>
-          <li><a href="#">Наши идеи (9)</a> </li>
-        </ul>
-      </div>
-      <div class="footer-block-column">
+      <div class="footer-block-col2">
+        <div class="footer-block-list">
         <div class="footer-block-header">МАГАЗИН</div>
-        <ul>
-          <li><a href="#">О нас</a></li>
-          <li><a href="#">Новости</a></li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Оплата</a></li>
-          <li><a href="#">Контакты</a></li>
-        </ul>
-      </div>
-      <div class="footer-block-column">
-        <div class="footer-block-header">МЫ В СОЦСЕТЯХ</div>
-        2016 &#169 Все права защищены
-        <div class="footer-social-icons">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x"></i>
-          </span>
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-facebook fa-stack-1x"></i>
-          </span>
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x"></i>
-          </span>
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-vk fa-stack-1x"></i>
-          </span>
+          <ul>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-block-list">
+          <div class="footer-block-header">МЫ В СОЦСЕТЯХ</div>
+          2016 &#169 Все права защищены
+          <div class="footer-social-icons">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-vk fa-stack-1x"></i>
+            </span>
+          </div>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@
 * {
   margin: 0;
   padding: 0;
+  font: inherit;
 }
 
 html {
@@ -11,12 +12,21 @@ html {
 }
 
 body {
+  width: 100%;
   min-height: 100%;
+  font-family: 'LatoWeb';
   @include flexbox;
+}
+
+.header {
+  position: relative;
 }
 
 .wrapper {
   margin: 0 auto;
+  width: 100%;
+  max-width: 1360px;
+  height: auto;
   -webkit-flex: 1;
   -ms-flex: 1; 
   -moz-flex: 1;
@@ -33,47 +43,63 @@ body {
 
 .topline-inner {
   display: inline-block;
- padding-right: 11.4%;
+  width: 86%;
 }
 
 .topline-inner-logo {
   >img {
     @include img_shadow;
     position: absolute;
-    left: 149px;
+    left: 11%;
     top: 0;
-    width: 162px;
-    height: 151px;
+    width: 12%;
+    min-width: 115px;
+    height: auto;
   }
-
 }
 
-.topline-inner-phone, .topline-inner-email {
+.topline-inner-contacts, .topline-inner-control {
   @include disp;
-  @include fonts_heavy(19px);
-  padding: 19px 25px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+
+.topline-inner-contacts {
+  min-width: 413px;
+  margin-right: 4.5%;
+  text-align: left;
+  >div {
+    @include disp;
+    @include fonts_heavy(19px);
+    &:first-child {
+      padding-right: 13%;
+    }
+  }
   img {
     width: 19px;
     height: 14px;
   }
 }
 
-.topline-inner-entry, .topline-inner-basket,
-.topline-inner-search {
-  @include disp;
-  @include fonts_regular(13px);
-  padding: 17px 20px;
-}
-
-.topline-inner-entry {
-  margin-left: 5px;
+.topline-inner-control {
+  min-width: 253px;
+  margin-right: 14.3%;
+  text-align: left;
+  >div {
+    padding-right: 17%;
+    @include disp;
+    @include fonts_regular(13px);
+    &:last-child {
+      padding: 0;
+    }
+  }
 }
 
 .poster {
-  background-image: url(../img/poster.png);
+  background: url(../img/poster.png) no-repeat center center;
   width: 100%;
   height: 505px;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
   @include bg_size(cover);
 }
 
@@ -81,13 +107,16 @@ body {
   background: #8da1a8;
   ul {
     margin: 0 auto;
-    width: 922px;
+    width: 923px;
   }
   li {
   margin: 0;
   padding: 12px 11px;
   list-style: none;
   @include disp;
+  &:hover {
+    background: #5d7a88;
+  }
   }
   a {
     @include fonts_regular(17px);
@@ -97,9 +126,21 @@ body {
   a:hover {
     color: #e5e5e5;
   }
-  .current {
-    background: #5d7a88;
-  }
+}
+
+.icon-menu {
+  display: none;
+  width: 32px;
+  height: 20px;
+  padding: 3px 0;
+  cursor: pointer;
+}
+
+.divide {
+  display: block;
+  height: 5px;
+  margin: 5px 0;
+  background: #5d7a88;
 }
 
 .title {
@@ -138,9 +179,10 @@ body {
     vertical-align: middle;
     &:nth-child(1) {
       padding-left: 7px;
+      width: 107px;
     }
     &:nth-child(2) {
-      width: 651px;
+      width: 63%;
     }
     &:last-child {
       width: 63px;
@@ -207,25 +249,30 @@ body {
 }
 
 .basket-footer {
-  display: table;
+  display: table-row;
   table-layout: fixed;
-  width: 1032px;
+  width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
   background: #fdfdfd;
-  border-top: 4px solid #fff;
+  &:before {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 76.5%;
+    height: 4px;
+    background: #fff;
+  }
   >div{
     display: table-cell;
-    padding: 15px 0;
+    padding: 17px 0;
     vertical-align: middle;
-    &:nth-child(1) {
-      @include fonts_bold(15px);
-      text-align: right;
-      width: 828px;
-    }
     &:nth-child(2) {
+      @include fonts_bold(15px);
+      text-align: left;
+    }
+    &:nth-child(3) {
       @include fonts_bold(17px);
-      padding-left: 26px;
       color: #ed184f;
     }
   }
@@ -243,7 +290,7 @@ body {
 .methods {
   @include main_forms;
   height: 606px;
-  margin: 37px auto;
+  margin: 45px auto;
 }
 
 .methods-header {
@@ -275,7 +322,13 @@ body {
 
 .payment-tabs {
   width: 49%;
+  min-width: 414px;
   margin: 0 auto;
+  >div {
+    &:nth-child(1) {
+      text-align: left;
+    }
+  }
 }
 
 .payment-tabs-item {
@@ -324,8 +377,8 @@ body {
 
 .input {
   @include disp;
-  width: 244px;
-  padding-right: 13px;
+  width: 48%;
+  padding-right: 3.17%;
   >input {
     @include input_style;
   }
@@ -364,6 +417,7 @@ body {
 .switch {
   display: table;
   width: 100%;
+  min-width: 354px;
   border-collapse: collapse;
   >div {
     box-sizing: border-box;
@@ -403,7 +457,6 @@ body {
 .button-group {
   padding-top: 24px;
   padding-left: 23px;
-  text-align: center;
 }
 
 .button-red {
@@ -434,18 +487,15 @@ body {
   background: url(../img/footer.png);
   background-size: cover;
   background-repeat: no-repeat;
-  margin-top: 10px;
   h3 {
     font-size: 1.5em;
   }
 }
 
 
-.footer-block-column {
+.footer-block-col1, .footer-block-col2 {
   vertical-align: top;
   @include disp;
-  line-height: 1.6em;
-  padding-right: 5.5%;
   line-height: 1.5em;
   color: #5d7a88;
   @include fonts_regular(11px);
@@ -463,24 +513,39 @@ body {
   }
 }
 
+.footer-block-col2 {
+  border-left: 1px solid #c5d6d6;
+  width: 46%;
+  >div {
+    vertical-align: top;
+    &:first-child {
+      padding-left: 8%
+    }
+    &:last-child {
+      float: right;
+      padding-right: 14%;
+    }
+  }
+}
+
+.footer-block-col1 {
+  width: 51%;
+  >div:last-child {
+    padding: 0;
+  }
+  .footer-block-list {
+    padding-right: 12%;
+  }
+}
+
+.footer-block-list {
+  @include disp;
+}
+
 .footer-block {
-  text-align: left;
-  max-width: 76.5%;
+  width: 76.5%;
   margin: 0px auto;
   padding: 34px 0;
-  >div {
-    &:nth-last-child(2) {
-      padding-left: 1%;
-      padding-left: 9%;
-      padding-right: 14.7%;
-      border-left: 1px solid #c5d6d6;
-    }
-  }
-  >div {
-    &:nth-child(2) {
-      vertical-align: bottom;
-    }
-  }
   .footer-block-header {
     color: #303030;
   }
@@ -491,6 +556,7 @@ fieldset {
 }
 
 #delivery-button {
+  width: 1%;
   border-radius: 0;
   background: #fff;
   height: 26px;
@@ -558,4 +624,171 @@ fieldset {
   .ui-spinner-down {
     bottom: -1px;
   }
+}
+
+.fa-lg {
+  border: 1px solid #5d7a88;
+}
+
+.footer-social-icons {
+  padding-top: 35px;
+  span {
+    &:hover {
+      background: #9cb3b9;
+      cursor: pointer;
+    }
+  }
+}
+
+.fa-stack {
+  margin-right: 4px;
+}
+
+.faded {
+  display: none;
+}
+
+@media screen and (max-width: 1130px) {
+  .topline-inner-control {
+    margin-right: 7%;
+  }
+  .topline-inner-logo {
+    >img {
+      left: 2%;
+    }
+  }
+  .footer-block {
+    width: 95%;
+  }
+  .footer-block-col1 {
+    width: 39%;
+    min-width: 231px;
+    >div {
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+  .footer-block-col2 {
+    width: 60%;
+    border-left: 0;
+    >div {
+      &:last-child {
+       padding-right: 0;
+     }
+   }
+ }
+}
+
+@media screen and (max-width: 960px) {
+  .topline-inner-contacts {
+    min-width: 173px;
+    >div {
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+  .topline-inner {
+    text-align: center;
+  }
+   .nav {
+    background: #fff;
+    position: absolute;
+    right: 4.4%;
+    top: 12px;
+    min-height: 25px;
+    ul {
+      background: #8da1a8;
+      width: 163px;
+      position: absolute;
+      right: 0;
+      top: 33px;
+    }
+    li {
+      display: none;
+      margin: 0;
+      &:hover {
+        background: #5d7a88;
+      }
+    }
+    .icon-menu {
+      display: block;
+    }
+  }
+  .basket {
+    width: 99%;
+  }
+  .payment {
+    width: 99%;
+  }
+  .payment-tabs {
+    width: 73%;
+  }
+  .methods {
+    width: 99%;
+  }
+  .dropdown {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 812px) {
+  .poster {
+    background-position: center bottom;
+    height: 271px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .topline-inner-contacts {
+    display: none;
+  }
+  .topline-inner-control {
+    margin-right: 0;
+  }
+  .topline-inner-logo > img {
+    min-width: 63px;
+  }
+  .footer-block-col1, .footer-block-col2, .footer-block-col2 div{
+    display: block;
+    margin: 0 auto;
+    float: none !important;
+    text-align: center;
+  }
+  .footer-block-col1 {
+    padding-bottom: 25px;
+  }
+  .footer-block-col2 {
+    width: 39%;
+    .footer-block-list {
+      padding-bottom: 25px
+    }
+  }
+  .footer-block-list {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 582px) {
+  .button {
+    display: block !important;
+    margin: 0 auto 7px;
+    width: 100%;
+  }
+  .button-group {
+    padding: 0;
+  }
+  .methods, .payment {
+    background: transparent;
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 486px) {
+.topline-inner-logo > img {
+  @include box_shadow(0px 0px 0px 0px);
+}
 }
